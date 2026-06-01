@@ -279,7 +279,7 @@
 
       if (title) {
         setTextById('pub-title', title);
-        document.title = `${title} | MOMENTUM Lab`;
+        document.title = `${title} | MOMENTUM`;
       }
 
       if (authors) {
