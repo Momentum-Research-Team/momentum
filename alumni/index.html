@@ -285,23 +285,21 @@
     <div class="row justify-content-center" style="margin-bottom: 3rem;">
       <!-- ??熬곣뫕猿?????????-->
       <div class="col-12 col-sm-auto people-person text-center">
-        <a href="/momentum/authors/investigators/hyukjae-lee/">
-          <img class="portrait" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;"
-               src="/momentum/authors/investigators/hyukjae-lee/avatar.png" alt="Avatar">
+        <a href="/momentum/authors/investigators/people1/">
+          <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">1</div>
         </a>
         <div class="portrait-title">
-          <h2 style="font-size: 1.25rem;"><a href="/momentum/authors/investigators/hyukjae-lee/">Hyuk-Jae Lee</a></h2>
+          <h2 style="font-size: 1.25rem;"><a href="/momentum/authors/investigators/people1/">People 1</a></h2>
           <h3 style="font-size: 0.9rem;">Principal Investigator</h3>
         </div>
       </div>
       <!-- 嚥싲갭怡???? ???????-->
       <div class="col-12 col-sm-auto people-person text-center">
-        <a href="/momentum/authors/investigators/nam-joon-kim/">
-          <img class="portrait" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;"
-               src="/momentum/authors/investigators/nam-joon-kim/avatar.png" alt="Avatar">
+        <a href="/momentum/authors/investigators/people2/">
+          <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">2</div>
         </a>
         <div class="portrait-title">
-          <h2 style="font-size: 1.25rem;"><a href="/momentum/authors/investigators/nam-joon-kim/">Nam-Joon Kim</a></h2>
+          <h2 style="font-size: 1.25rem;"><a href="/momentum/authors/investigators/people2/">People 2</a></h2>
           <h3 style="font-size: 0.9rem;">Principal Investigator</h3>
         </div>
       </div>
@@ -374,27 +372,27 @@
 
     /* ???? Known profile photos (only confirmed avatar.png files) ???? */
     const PHOTO_OVERRIDES = {
-      'jaehyeok-bae':  '/momentum/authors/alumni/jaehyeok-bae/avatar.png',
+      'people24':  '/momentum/authors/alumni/people24/avatar.png',
       'seoyoung-ju':   '/momentum/authors/alumni/seoyoung-ju/avatar.png',
-      'hyukjae-lee':   '/momentum/authors/investigators/hyukjae-lee/avatar.png',
-      'nam-joon-kim':  '/momentum/authors/investigators/nam-joon-kim/avatar.png',
-      'kyeonghun-kim': '/momentum/authors/research_assistants/kyeonghun-kim/avatar.png',
-      'youngung-han':  '/momentum/authors/research_assistants/youngung-han/avatar.png',
-      'minkyung-cha':  '/momentum/authors/student_researchers/minkyung-cha/avatar.png',
-      'sooyong-kim':   '/momentum/authors/student_researchers/sooyong-kim/avatar.png',
-      'jooyoung-bae':  '/momentum/authors/undergraduate_interns/jooyoung-bae/avatar.png',
+      'people1':   '/momentum/authors/investigators/people1/avatar.png',
+      'people2':  '/momentum/authors/investigators/people2/avatar.png',
+      'people3': '/momentum/authors/research_assistants/people3/avatar.png',
+      'people4':  '/momentum/authors/research_assistants/people4/avatar.png',
+      'people7':  '/momentum/authors/student_researchers/people7/avatar.png',
+      'people5':   '/momentum/authors/student_researchers/people5/avatar.png',
+      'people10':  '/momentum/authors/undergraduate_interns/people10/avatar.png',
       'junbeom-lee':   '/momentum/authors/undergraduate_interns/junbeom-lee/avatar.png',
-      'anna-jung':     '/momentum/authors/undergraduate_interns/anna-jung/avatar.png',
-      'yului-jung':    '/momentum/authors/undergraduate_interns/yului-jung/avatar.png',
-      'chahnwoo-park': '/momentum/authors/visitors/chahnwoo-park/avatar.png',
-      'junsu-lim':     '/momentum/authors/visitors/junsu-lim/avatar.jpg',
-      'ginny-nvidia':  '/momentum/authors/advisors/ginny-nvidia/avatar.png',
-      'jeff-nvidia':   '/momentum/authors/advisors/jeff-nvidia/avatar.png',
-      'ivan-nvidia':   '/momentum/authors/advisors/ivan-nvidia/avatar.png',
-      'ken-liao':      '/momentum/authors/advisors/ken-liao/avatar.png',
-      'ka-chun-cheung': '/momentum/authors/advisors/ka-chun-cheung/avatar.png',
-      'woo-kyoung-jeong': '/momentum/authors/advisors/woo-kyoung-jeong/avatar.png',
-      'won-jae-lee': '/momentum/authors/advisors/won-jae-lee/avatar.png',
+      'people9':     '/momentum/authors/undergraduate_interns/people9/avatar.png',
+      'people11':    '/momentum/authors/undergraduate_interns/people11/avatar.png',
+      'people25': '/momentum/authors/visitors/people25/avatar.png',
+      'people23':     '/momentum/authors/visitors/people23/avatar.jpg',
+      'people18':  '/momentum/authors/advisors/people18/avatar.png',
+      'people19':   '/momentum/authors/advisors/people19/avatar.png',
+      'people17':   '/momentum/authors/advisors/people17/avatar.png',
+      'people20':      '/momentum/authors/advisors/people20/avatar.png',
+      'people21': '/momentum/authors/advisors/people21/avatar.png',
+      'people13': '/momentum/authors/advisors/people13/avatar.png',
+      'people12': '/momentum/authors/advisors/people12/avatar.png',
     };
 
     function getPhoto(p, profileUrl) {
@@ -408,15 +406,14 @@
 
     /* mkPortrait: initials circle as base, photo overlaid on top */
     function mkPortrait(initial, photoSrc, altText) {
+      let labelText = initial;
+      if (altText && altText.startsWith('People ')) {
+        labelText = altText.replace('People ', '');
+      }
       const base = `position:relative;width:150px;height:150px;border-radius:50%;background:#2962ff;` +
                    `display:flex;align-items:center;justify-content:center;margin:0 auto;` +
                    `font-size:55px;font-weight:bold;color:white;overflow:hidden;`;
-      const overlay = photoSrc
-        ? `<img src="${photoSrc}" alt="${altText}" ` +
-          `style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:50%;" ` +
-          `onerror="this.remove()">`
-        : '';
-      return `<div style="${base}">${initial}${overlay}</div>`;
+      return `<div style="${base}">${labelText}</div>`;
     }
 
 
@@ -718,7 +715,7 @@
         </div>
       </div>
       <p class="powered-by">
-    <a href="https://github.com/khkim1729">Kyeonghun Kim</a> &copy; 2026 &middot; Developed by <a href="https://github.com/khkim1729">Kyeonghun Kim</a> &amp; <a href="https://github.com/jsulim">Junsu Lim</a> &middot; Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> (<a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic</a>).
+    <a href="https://github.com/khkim1729">People 3</a> &copy; 2026 &middot; Developed by <a href="https://github.com/khkim1729">People 3</a> &amp; <a href="https://github.com/jsulim">People 23</a> &middot; Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> (<a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic</a>).
 
     <span class="float-right" aria-hidden="true">
       <a href="#" class="back-to-top">
