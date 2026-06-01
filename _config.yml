@@ -1,0 +1,8 @@
+title: "MOMENTUM Lab"
+baseurl: "/momentum"
+url: "https://capp.snu.ac.kr"
+
+theme: 
+exclude:
+  - .git/
+  - .github/

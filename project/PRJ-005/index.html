@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  <meta name="author" content="MOMENTUM Lab">
+  <meta name="description" content="Project overview coming soon.">
+
+  <meta name="theme-color" content="#2962ff">
+  <script src="/momentum/js/mathjax-config.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="/momentum/css/academic.css">
+
+  <link rel="manifest" href="/momentum/index.webmanifest">
+  <link rel="icon" type="image/png" href="/momentum/images/momentum_favicon_32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/momentum/images/momentum_favicon_192.png">
+
+  <title>NeoNet: Automated PNI Detection Framework | MOMENTUM Lab</title>
+          <style>
+    .article-project .featured-image-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 920px;
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e4eaf7;
+      box-shadow: 0 14px 32px rgba(14, 35, 91, 0.1);
+      background: transparent;
+    }
+    .article-project .featured-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 72vh;
+      object-fit: contain;
+      background: transparent;
+    }
+    .article-project .section-card {
+      border: 1px solid #e2e8f4;
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+    .article-project .section-card + .section-card {
+      margin-top: 1rem;
+      position: relative;
+    }
+    .article-project .section-card + .section-card::before {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      top: -0.56rem;
+      height: 1px;
+      background: #e7edf7;
+    }
+    .article-project .article-style {
+      margin: 0;
+      padding: 1.25rem 1.3rem;
+    }
+    .article-project .article-style h3 {
+      margin-bottom: 0.85rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+      color: #122444;
+    }
+    .article-project .article-style .abstract-body {
+      max-width: 76ch;
+    }
+    .article-project .article-style p {
+      margin-bottom: 0.95rem;
+      font-size: 1.01rem;
+      line-height: 1.8;
+      color: #273548;
+    }
+    .article-project .article-style p:last-child {
+      margin-bottom: 0;
+    }
+    .article-project .project-tags-inline {
+      margin-top: 1rem;
+      padding: 0 0.15rem;
+    }
+    .article-project .project-tags-inline .article-tags {
+      margin: 0;
+    }
+    .project-insights {
+      margin-bottom: 1rem;
+      border: 1px solid #dce6fb;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #f7faff 0%, #eef4ff 100%);
+      box-shadow: 0 14px 38px rgba(37, 72, 153, 0.12);
+      padding: 1.15rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-insights::before {
+      content: "";
+      position: absolute;
+      right: -48px;
+      top: -52px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(31, 82, 207, 0.24) 0%, rgba(31, 82, 207, 0) 68%);
+      pointer-events: none;
+    }
+    .project-insights .overview-card {
+      position: relative;
+      z-index: 1;
+      border: 1px solid #d7e2f8;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 0.95rem 1rem;
+    }
+    .project-insights .overview-label {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #2a5fc9;
+      margin-bottom: 0.42rem;
+      font-weight: 700;
+    }
+    .project-insights #project-overview {
+      margin: 0;
+      max-width: 76ch;
+      font-size: 1.01rem;
+      line-height: 1.8;
+      color: #243244;
+    }
+    .project-insights .insight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.95rem;
+      margin-top: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+    .project-insights .insight-card {
+      border: 1px solid #d8e3f8;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 0.9rem 0.95rem 0.95rem;
+    }
+    .project-insights .insight-card h3 {
+      margin: 0 0 0.65rem;
+      font-size: 0.98rem;
+      color: #173263;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .project-insights .insight-list {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+    }
+    .project-insights .insight-list li {
+      margin-bottom: 0;
+      padding: 0.42rem 0;
+      line-height: 1.58;
+      color: #2f3c4e;
+      border-bottom: 1px solid #ebf1ff;
+    }
+    .project-insights .insight-list li:first-child {
+      padding-top: 0;
+    }
+    .project-insights .insight-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    .project-insights .insight-placeholder {
+      color: #6d7786;
+      font-style: italic;
+    }
+    .article-project .project-contact-inline {
+      margin-top: 1rem;
+      padding-top: 0.95rem;
+      border-top: 1px solid #e7edf7;
+    }
+    .article-project .project-contact-inline .author-card {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+    .article-project .project-contact-inline .portrait {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .article-project .project-contact-inline .card-text {
+      line-height: 1.72;
+      color: #2f3c4e;
+      margin-bottom: 0;
+    }
+    .article-project .project-contact-inline .network-icon {
+      margin-top: 0.65rem;
+    }
+    .article-project .project-contact-inline .network-icon .big-icon {
+      font-size: 1.05rem;
+    }
+    .article-project .project-contact-inline .network-icon li {
+      margin-right: 8px;
+    }
+    @media (max-width: 768px) {
+      .article-project .article-style {
+        padding: 1rem;
+      }
+      .article-project .project-contact-inline {
+        padding-top: 0.8rem;
+      }
+      .article-project .article-style p {
+        font-size: 0.98rem;
+      }
+      .project-insights {
+        padding: 1rem;
+      }
+      .project-insights .insight-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-insights #project-overview {
+        font-size: 0.98rem;
+      }
+      .article-project .project-contact-inline .portrait {
+        width: 72px;
+        height: 72px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div id="search-box">
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+      </div>
+    </section>
+    <section class="section-search-results">
+      <div id="search-hits"></div>
+    </section>
+  </div>
+</aside>
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/momentum/"><img src="/momentum/images/logo/main-logo.png" alt="MOMENTUM Lab" style="height: 60px; width: auto;"></a>
+    </div>
+
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/momentum/"><img src="/momentum/images/logo/main-logo.png" alt="MOMENTUM Lab" style="height: 60px; width: auto;"></a>
+    </div>
+
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+      <ul class="navbar-nav d-md-inline-flex">
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/#hero"><span>Home</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/publication"><span>Publications</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/post/"><span>Blog</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/images/"><span>Images</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/#people"><span>People</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/alumni/"><span>Teams</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/#contact"><span>Contact</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<article class="article article-project">
+  <div class="article-container pt-3">
+    <h1>NeoNet: Automated PNI Detection Framework</h1>
+
+
+    <div class="article-metadata">
+  <div>
+    <span>Team PNI</span>
+  </div>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/momentum/categories/applications/">Applications</a></span>
+</div>
+
+<div class="btn-links">
+      <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="paper.pdf" target="_blank" rel="noopener">PDF</a>
+      <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="poster.pdf" target="_blank" rel="noopener">POSTER</a>
+      <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=fS68PsaWn4M" target="_blank" rel="noopener">VIDEO</a>
+    </div>
+  </div>
+
+  <div class="article-header article-container featured-image-wrapper mt-4 mb-4">
+    <div style="position: relative">
+      <img src="featured.jpg" alt="" class="featured-image">
+    </div>
+  </div>
+
+  <div class="article-container">
+    <div class="project-content-stack">
+      <section class="project-insights" aria-label="Project Summary">
+        <div class="overview-card">
+          <span class="overview-label">Overview</span>
+          <p id="project-overview">Synchronizing overview from sheet...</p>
+        </div>
+        <div class="insight-grid">
+          <div class="insight-card">
+            <h3>Key Achievements</h3>
+            <ul class="insight-list" id="project-achievements">
+              <li class="insight-placeholder">Synchronizing achievements from sheet...</li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Milestones</h3>
+            <ul class="insight-list" id="project-milestones">
+              <li class="insight-placeholder">Synchronizing milestones from sheet...</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="article-style section-card">
+        <h3>Abstract</h3>
+        <div class="abstract-body">
+          <p>Minimizing invasive diagnostic procedures is a central goal in medical imaging. Perineural invasion (PNI), a critical prognostic factor where tumors infiltrate nerves, remains difficult to confirm noninvasively, as its features are often imperceptible in conventional MRI. PNI research is severely hampered by data scarcity.</p>
+          <p>Our study utilized a dataset collected over a decade at Samsung Medical Center (SMC), initially comprising 306 patients. After rigorous quality control, the final cohort included 128 T1-weighted hepatobiliary phase MRI scans, exhibiting significant class imbalance (44 PNI-positive/84 PNI-negative). To address these challenges, we present NeoNet, the first integrated end-to-end 3D deep learning framework for PNI prediction in cholangiocarcinoma that avoids reliance on radiomics or handcrafted features.</p>
+          <p>NeoNet integrates three modules: (1) NeoSeg, utilizing a Tumor-Localized ROI Crop (TLCR) algorithm; (2) NeoGen, a 3D latent diffusion model (LDM) with ControlNet, conditioned on anatomical masks to generate synthetic image patches and balance the dataset to a 1:1 ratio; and (3) NeoCls, the final prediction module. For NeoCls, we developed the PNI-Attention Network (PattenNet), which uses the frozen LDM encoder and specialized 3D Dual Attention Blocks (DAB) designed to detect subtle intensity variations and spatial patterns indicative of PNI.</p>
+          <p>In rigorous five-fold cross-validation, NeoNet outperformed baseline 3D models. By leveraging synthetic data for balanced training, PattenNet achieved the highest performance with a maximum AUC of 0.7903.</p>
+        </div>
+      </div>
+
+      <div class="project-tags-inline" aria-label="Project Tags">
+        <div class="article-tags">
+          <a class="badge badge-light" href="/momentum/tags/deep-learning">Deep Learning</a>
+          <a class="badge badge-light" href="/momentum/tags/medical-imaging">Medical Imaging</a>
+          <a class="badge badge-light" href="/momentum/tags/computer-vision">Computer Vision</a>
+          <a class="badge badge-light" href="/momentum/tags/3d-analysis">3D Analysis</a>
+          <a class="badge badge-light" href="/momentum/tags/generative-model">Generative Model</a>
+        </div>
+      </div>
+
+      <section class="project-contact-inline" aria-label="Main Contact">
+        <div class="media author-card">
+          <img class="portrait mr-3" src="/momentum/authors/research_assistants/youngung-han/avatar.png" alt="Avatar">
+          <div class="media-body">
+            <h5 class="card-title"><a href="/momentum/authors/research_assistants/youngung-han/">Youngung Han</a></h5>
+            <h6 class="card-subtitle">Research Assistant</h6>
+            <p class="card-text">Youngung Han is currently pursuing the Ph.D. degree with the Department of Computer Science and Engineering, Seoul National University, Seoul, Republic of Korea. He is a Research Assistant at the Intelligent Medical Systems and Imaging (MOMENTUM) Laboratory, where his research focuses on developing advanced deep learning architectures for medical image analysis. His research interests lie in advanced deep learning architectures for 3D medical image analysis.</p>
+            <ul class="network-icon" aria-hidden="true">
+        <li>
+          <a href="mailto:youngunghan@snu.ac.kr" >
+            <i class="fas fa-envelope big-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/youngunghan" target="_blank" rel="noopener">
+            <i class="fab fa-github big-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/youngunghan/" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin big-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/youngunghan" target="_blank" rel="noopener">
+            <i class="fab fa-twitter big-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://youngunghan.medium.com" target="_blank" rel="noopener">
+            <i class="fab fa-medium big-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://scholar.google.com/citations?user=youngunghan" target="_blank" rel="noopener">
+            <i class="ai ai-google-scholar big-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://youngunghan.github.io" target="_blank" rel="noopener">
+            <i class="fas fa-globe big-icon"></i>
+          </a>
+        </li>
+      </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</article>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+
+<script>const code_highlighting = true;</script>
+<script>
+  const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+  const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+  const content_type = { 'post': "Posts", 'project': "Projects", 'publication' : "Publications", 'talk' : "Talks" };
+</script>
+<script id="search-hit-fuse-template" type="text/x-template">
+  <div class="search-hit" id="summary-{{key}}">
+  <div class="search-hit-content">
+    <div class="search-hit-name">
+      <a href="{{relpermalink}}">{{title}}</a>
+      <div class="article-metadata search-hit-type">{{type}}</div>
+      <p class="search-hit-description">{{snippet}}</p>
+    </div>
+  </div>
+  </div>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+<script src="/momentum/js/academic.min.a0d331bcd05dbe8b31e244f796710f08.js"></script>
+<script src="/momentum/js/SheetServices.js"></script>
+<script>
+  (function () {
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normalizeProjectId(value) {
+      return String(value || '')
+        .trim()
+        .toUpperCase()
+        .replace(/_/g, '-');
+    }
+
+    function getValue(row, keys) {
+      for (const key of keys) {
+        if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== '') {
+          return String(row[key]).trim();
+        }
+      }
+      return '';
+    }
+
+    function splitListText(value) {
+      const raw = String(value || '').trim();
+      if (!raw) return [];
+      return raw
+        .replace(/\u2022/g, ';')
+        .split(/\r?\n|[;|]/g)
+        .map((item) => item.replace(/^[-*]\s*/, '').trim())
+        .filter(Boolean);
+    }
+
+    function renderList(id, items, fallbackText) {
+      const element = document.getElementById(id);
+      if (!element) return;
+      if (!items.length) {
+        element.innerHTML = `<li class="insight-placeholder">${escapeHtml(fallbackText)}</li>`;
+        return;
+      }
+      element.innerHTML = items.map((item) => `<li>${escapeHtml(item)}</li>`).join('');
+    }
+
+    async function syncProjectSummary() {
+      if (typeof getProjects !== 'function') return;
+      const rows = await getProjects();
+      if (!Array.isArray(rows) || rows.length === 0) return;
+
+      const pathMatch = window.location.pathname.match(/PRJ[-_]\d+/i);
+      const targetProjectId = normalizeProjectId(pathMatch ? pathMatch[0] : '');
+      if (!targetProjectId) return;
+
+      const row = rows.find((item) => {
+        const projectId = getValue(item, ['Project_ID', 'Project ID', 'project_id', 'Column_0']);
+        return normalizeProjectId(projectId) === targetProjectId;
+      });
+      if (!row) return;
+
+      const overview = getValue(row, ['Overview', 'overview', 'Column_4']);
+      const achievements = getValue(row, ['Achievements', 'achievements', 'Column_5']);
+      const milestones = getValue(row, ['Milestones', 'milestones', 'Column_6']);
+
+      const overviewElement = document.getElementById('project-overview');
+      if (overviewElement) {
+        overviewElement.textContent = overview || 'Overview will be added soon.';
+      }
+      renderList('project-achievements', splitListText(achievements), 'Achievements will be added soon.');
+      renderList('project-milestones', splitListText(milestones), 'Milestones will be added soon.');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      syncProjectSummary().catch(function (error) {
+        console.error('Failed to sync project summary:', error);
+      });
+    });
+  })();
+</script>
+
+<div class="container">
+  <footer class="site-footer">
+      <div class="d-flex justify-content-center align-items-center flex-wrap mb-5" style="gap: 3rem; margin-top: 2rem;">
+        <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
+          <img src="/momentum/images/logo/capp.png" alt="CAPP Lab Logo" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+        </div>
+        <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
+          <img src="/momentum/images/logo/snu.jpg" alt="SNU Logo" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+        </div>
+        <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
+          <img src="/momentum/images/logo/smc.png" alt="SMC Logo" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+        </div>
+      </div>
+        <p class="powered-by">
+      <a href="https://github.com/khkim1729">Kyeonghun Kim</a> &copy; 2026 &middot; Developed by <a href="https://github.com/khkim1729">Kyeonghun Kim</a> &amp; <a href="https://github.com/jsulim">Junsu Lim</a> &middot; Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> (<a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic</a>).
+      <span class="float-right" aria-hidden="true">
+        <a href="#" class="back-to-top">
+          <span class="button_icon">
+            <i class="fas fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+    </p>
+  </footer>
+</div>
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

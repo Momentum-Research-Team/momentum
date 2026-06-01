@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  <meta name="author" content="MOMENTUM Lab">
+  <meta name="description" content="Project overview coming soon.">
+
+  <meta name="theme-color" content="#2962ff">
+  <script src="/momentum/js/mathjax-config.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="/momentum/css/academic.css">
+
+  <link rel="manifest" href="/momentum/index.webmanifest">
+  <link rel="icon" type="image/png" href="/momentum/images/momentum_favicon_32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/momentum/images/momentum_favicon_192.png">
+
+  <title>Medical VLM with Global Anomaly Detection (MEDIC-AD) | MOMENTUM Lab</title>
+        <style>
+    .article-project {
+      --project-card-max-width: 780px;
+    }
+    .article-project .project-content-stack {
+      max-width: var(--project-card-max-width);
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .article-project .article-style {
+      margin-top: 1.4rem;
+      padding: 1.25rem 1.3rem;
+      border: 1px solid #e2e8f4;
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+    .article-project .article-style h3 {
+      margin-bottom: 0.85rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+      color: #122444;
+    }
+    .article-project .article-style .abstract-body {
+      max-width: 76ch;
+    }
+    .article-project .article-style p {
+      margin-bottom: 0.95rem;
+      font-size: 1.01rem;
+      line-height: 1.8;
+      color: #273548;
+    }
+    .article-project .article-style p:last-child {
+      margin-bottom: 0;
+    }
+    .article-project .featured-image-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: var(--project-card-max-width);
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e4eaf7;
+      box-shadow: 0 14px 32px rgba(14, 35, 91, 0.1);
+      background: linear-gradient(160deg, #eef4ff 0%, #f9fbff 100%);
+    }
+    .article-project .featured-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 72vh;
+      object-fit: contain;
+      background: transparent;
+    }
+    .project-insights {
+      margin-top: 0;
+      margin-bottom: 1.4rem;
+      border: 1px solid #dce6fb;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #f7faff 0%, #eef4ff 100%);
+      box-shadow: 0 14px 38px rgba(37, 72, 153, 0.12);
+      padding: 1.15rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-insights::before {
+      content: "";
+      position: absolute;
+      right: -48px;
+      top: -52px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(31, 82, 207, 0.24) 0%, rgba(31, 82, 207, 0) 68%);
+      pointer-events: none;
+    }
+    .project-insights .overview-card {
+      position: relative;
+      z-index: 1;
+      border: 1px solid #d7e2f8;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 0.95rem 1rem;
+    }
+    .project-insights .overview-label {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #2a5fc9;
+      margin-bottom: 0.42rem;
+      font-weight: 700;
+    }
+    .project-insights #project-overview {
+      margin: 0;
+      max-width: 76ch;
+      font-size: 1.01rem;
+      line-height: 1.8;
+      color: #243244;
+    }
+    .project-insights .insight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.95rem;
+      margin-top: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+    .project-insights .insight-card {
+      border: 1px solid #d8e3f8;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 0.9rem 0.95rem 0.95rem;
+    }
+    .project-insights .insight-card h3 {
+      margin: 0 0 0.65rem;
+      font-size: 0.98rem;
+      color: #173263;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .project-insights .insight-list {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+    }
+    .project-insights .insight-list li {
+      margin-bottom: 0;
+      padding: 0.42rem 0;
+      line-height: 1.58;
+      color: #2f3c4e;
+      border-bottom: 1px solid #ebf1ff;
+    }
+    .project-insights .insight-list li:first-child {
+      padding-top: 0;
+    }
+    .project-insights .insight-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    .project-insights .insight-placeholder {
+      color: #6d7786;
+      font-style: italic;
+    }
+    @media (max-width: 768px) {
+      .article-project .article-style {
+        padding: 1rem;
+      }
+      .project-insights {
+        padding: 1rem;
+      }
+      .project-insights .insight-grid {
+        grid-template-columns: 1fr;
+      }
+      .article-project .article-style p,
+      .project-insights #project-overview {
+        font-size: 0.98rem;
+      }
+    }
+  </style></head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div id="search-box">
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+      </div>
+    </section>
+    <section class="section-search-results">
+      <div id="search-hits"></div>
+    </section>
+  </div>
+</aside>
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/momentum/"><img src="/momentum/images/logo/main-logo.png" alt="MOMENTUM Lab" style="height: 60px; width: auto;"></a>
+    </div>
+
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/momentum/"><img src="/momentum/images/logo/main-logo.png" alt="MOMENTUM Lab" style="height: 60px; width: auto;"></a>
+    </div>
+
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+      <ul class="navbar-nav d-md-inline-flex">
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/#hero"><span>Home</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/publication"><span>Publications</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/post/"><span>Blog</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/images/"><span>Images</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/#people"><span>People</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/alumni/"><span>Teams</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/momentum/#contact"><span>Contact</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<article class="article article-project">
+  <div class="article-container pt-3">
+    <h1>Medical VLM with Global Anomaly Detection (MEDIC-AD)</h1>
+
+
+    <div class="article-metadata">
+  <div>
+    <span>Team AIDAS Collaboration</span>
+  </div>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/momentum/categories/models/">Models</a></span>
+</div>
+
+<div class="btn-links">
+      <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="paper.pdf" target="_blank" rel="noopener">PDF</a>
+    </div>
+  </div>
+
+  <div class="article-header article-container featured-image-wrapper mt-4 mb-4">
+    <div style="position: relative">
+      <img src="featured.jpg" alt="" class="featured-image">
+    </div>
+  </div>
+
+  <div class="article-container">
+    <div class="project-content-stack">
+      <section class="project-insights" aria-label="Project Summary">
+        <div class="overview-card">
+          <span class="overview-label">Overview</span>
+          <p id="project-overview">Synchronizing overview from sheet...</p>
+        </div>
+        <div class="insight-grid">
+          <div class="insight-card">
+            <h3>Key Achievements</h3>
+            <ul class="insight-list" id="project-achievements">
+              <li class="insight-placeholder">Synchronizing achievements from sheet...</li>
+            </ul>
+          </div>
+          <div class="insight-card">
+            <h3>Milestones</h3>
+            <ul class="insight-list" id="project-milestones">
+              <li class="insight-placeholder">Synchronizing milestones from sheet...</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="article-style">
+        <h3>Abstract</h3>
+        <div class="abstract-body">
+          <p>Lesion detection, symptom tracking, and visual explainability are central to real-world medical image analysis, yet current medical vision-language models (VLMs) still lack mechanisms that translate their broad knowledge into clinically actionable outputs.</p>
+          <p>To bridge this gap, we present MEDIC-AD, a clinically oriented VLM that strengthens these capabilities through a stage-wise framework. First, learnable anomaly-aware tokens ($\langle Ano \rangle$) encourage the model to focus on abnormal regions and build more discriminative lesion-centered representations. Second, inter-image difference tokens ($\langle Diff \rangle$) explicitly encode temporal changes between studies, allowing the model to distinguish worsening, improvement, and stability in disease burden.</p>
+          <p>Finally, a dedicated explainability stage trains the model to generate heatmaps that highlight lesion-related regions, offering clear visual evidence that is consistent with the model's reasoning. Through this staged design, MEDIC-AD steadily boosts performance across anomaly detection, symptom tracking, and anomaly segmentation, achieving state-of-the-art results compared with both closed-source and medical-specialized baselines.</p>
+          <p>Evaluations on real longitudinal clinical data collected from hospital workflows further show that MEDIC-AD delivers stable predictions and clinically faithful explanations in practical patient-monitoring and decision-support workflows.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-tags">
+      <a class="badge badge-light" href="/momentum/tags/deep-learning">Deep Learning</a>
+      <a class="badge badge-light" href="/momentum/tags/medical-imaging">Medical Imaging</a>
+      <a class="badge badge-light" href="/momentum/tags/computer-vision">Computer Vision</a>
+      <a class="badge badge-light" href="/momentum/tags/vision-language-model">Vision-Language Model</a>
+    </div>
+
+
+
+  </div>
+</article>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+
+<script>const code_highlighting = true;</script>
+<script>
+  const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+  const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+  const content_type = { 'post': "Posts", 'project': "Projects", 'publication' : "Publications", 'talk' : "Talks" };
+</script>
+<script id="search-hit-fuse-template" type="text/x-template">
+  <div class="search-hit" id="summary-{{key}}">
+  <div class="search-hit-content">
+    <div class="search-hit-name">
+      <a href="{{relpermalink}}">{{title}}</a>
+      <div class="article-metadata search-hit-type">{{type}}</div>
+      <p class="search-hit-description">{{snippet}}</p>
+    </div>
+  </div>
+  </div>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+<script src="/momentum/js/academic.min.a0d331bcd05dbe8b31e244f796710f08.js"></script>
+<script src="/momentum/js/SheetServices.js"></script>
+<script>
+  (function () {
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normalizeProjectId(value) {
+      return String(value || '')
+        .trim()
+        .toUpperCase()
+        .replace(/_/g, '-');
+    }
+
+    function getValue(row, keys) {
+      for (const key of keys) {
+        if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== '') {
+          return String(row[key]).trim();
+        }
+      }
+      return '';
+    }
+
+    function splitListText(value) {
+      const raw = String(value || '').trim();
+      if (!raw) return [];
+      return raw
+        .replace(/\u2022/g, ';')
+        .split(/\r?\n|[;|]/g)
+        .map((item) => item.replace(/^[-*]\s*/, '').trim())
+        .filter(Boolean);
+    }
+
+    function renderList(id, items, fallbackText) {
+      const element = document.getElementById(id);
+      if (!element) return;
+      if (!items.length) {
+        element.innerHTML = `<li class="insight-placeholder">${escapeHtml(fallbackText)}</li>`;
+        return;
+      }
+      element.innerHTML = items
+        .map((item) => `<li>${escapeHtml(item)}</li>`)
+        .join('');
+    }
+
+    async function syncProjectSummary() {
+      if (typeof getProjects !== 'function') return;
+      const rows = await getProjects();
+      if (!Array.isArray(rows) || rows.length === 0) return;
+
+      const row = rows.find((item) => {
+        const projectId = getValue(item, ['Project_ID', 'Project ID', 'project_id', 'Column_0']);
+        return normalizeProjectId(projectId) === 'PRJ-001';
+      });
+
+      if (!row) return;
+
+      const overview = getValue(row, ['Overview', 'overview', 'Column_4']);
+      const achievements = getValue(row, ['Achievements', 'achievements', 'Column_5']);
+      const milestones = getValue(row, ['Milestones', 'milestones', 'Column_6']);
+
+      const overviewElement = document.getElementById('project-overview');
+      if (overviewElement) {
+        overviewElement.textContent = overview || 'Overview will be added soon.';
+      }
+
+      renderList('project-achievements', splitListText(achievements), 'Achievements will be added soon.');
+      renderList('project-milestones', splitListText(milestones), 'Milestones will be added soon.');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      syncProjectSummary().catch(function (error) {
+        console.error('Failed to sync PRJ-001 project summary:', error);
+      });
+    });
+  })();
+</script>
+
+<div class="container">
+  <footer class="site-footer">
+      <div class="d-flex justify-content-center align-items-center flex-wrap mb-5" style="gap: 3rem; margin-top: 2rem;">
+        <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
+          <img src="/momentum/images/logo/capp.png" alt="CAPP Lab Logo" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+        </div>
+        <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
+          <img src="/momentum/images/logo/snu.jpg" alt="SNU Logo" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+        </div>
+        <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
+          <img src="/momentum/images/logo/smc.png" alt="SMC Logo" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+        </div>
+      </div>
+        <p class="powered-by">
+      <a href="https://github.com/khkim1729">Kyeonghun Kim</a> &copy; 2026 &middot; Developed by <a href="https://github.com/khkim1729">Kyeonghun Kim</a> &amp; <a href="https://github.com/jsulim">Junsu Lim</a> &middot; Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> (<a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic</a>).
+      <span class="float-right" aria-hidden="true">
+        <a href="#" class="back-to-top">
+          <span class="button_icon">
+            <i class="fas fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+    </p>
+  </footer>
+</div>
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
