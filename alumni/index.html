@@ -28,9 +28,9 @@
   <meta property="twitter:card" content="summary">
   <meta property="og:site_name" content="MOMENTUM Lab">
   <meta property="og:url" content="https://momentumlab.github.io/alumni/">
-  <meta property="og:title" content="Teams | MOMENTUM Lab">
+  <meta property="og:title" content="Members | MOMENTUM Lab">
   <meta property="og:description" content="MOMENTUM Lab Teams ??all members organized by team">
-  <title>Teams | MOMENTUM Lab</title>
+  <title>Members | MOMENTUM Lab</title>
 
   <style>
     /* ???? Page ???? */
@@ -255,8 +255,8 @@
           <li class="nav-item"><a class="nav-link" href="/momentum/publication"><span>Publications</span></a></li>
           <li class="nav-item"><a class="nav-link" href="/momentum/post/"><span>Blog</span></a></li>
           <li class="nav-item"><a class="nav-link" href="/momentum/images/"><span>Images</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="/momentum/#people"><span>People</span></a></li>
-          <li class="nav-item"><a class="nav-link active" href="/momentum/alumni/"><span>Teams</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="/momentum/#people"><span>Staff</span></a></li>
+          <li class="nav-item"><a class="nav-link active" href="/momentum/alumni/"><span>Members</span></a></li>
           <li class="nav-item"><a class="nav-link" href="/momentum/#contact"><span>Contact</span></a></li>
         </ul>
       </div>
@@ -272,441 +272,310 @@
   <div class="container teams-page">
 
     <div class="teams-header">
-      <h1>Teams</h1>
-      <p>All MOMENTUM Lab members, organized by role or research team</p>
+      <h1>Members</h1>
+      <p>All MOMENTUM Lab members, organized by role</p>
     </div>
 
-    <!-- ???? Principal Investigators ???? -->
-    <div class="row section-heading justify-content-center" style="margin-top: 2rem;">
-      <div class="col-md-12 text-center">
-        <h2 class="mb-4">Principal Investigators</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center" style="margin-bottom: 3rem;">
-      <!-- ??熬곣뫕猿?????????-->
-      <div class="col-12 col-sm-auto people-person text-center">
-        <a href="/momentum/authors/investigators/people1/">
-          <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">1</div>
-        </a>
-        <div class="portrait-title">
-          <h2 style="font-size: 1.25rem;"><a href="/momentum/authors/investigators/people1/">People 1</a></h2>
-          <h3 style="font-size: 0.9rem;">Principal Investigator</h3>
+    <div class="row justify-content-center people-widget" style="margin-top: 2rem;">
+
+
+        <div class="col-md-12 section-heading">
+          <h1>Staff</h1>
         </div>
-      </div>
-      <!-- 嚥싲갭怡???? ???????-->
-      <div class="col-12 col-sm-auto people-person text-center">
-        <a href="/momentum/authors/investigators/people2/">
-          <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">2</div>
-        </a>
-        <div class="portrait-title">
-          <h2 style="font-size: 1.25rem;"><a href="/momentum/authors/investigators/people2/">People 2</a></h2>
-          <h3 style="font-size: 0.9rem;">Principal Investigator</h3>
+
+        <!-- ???? Principal Investigators ???? -->
+        <div class="col-md-12">
+          <h2 class="mb-4">Principal Investigators</h2>
         </div>
-      </div>
-    </div>
 
-    <!-- Primary tabs: Teams | Alumni -->
-    <div class="tab-row">
-      <button id="tab-teams" class="tab-btn active" onclick="switchTab('teams')">Teams</button>
-      <button id="tab-alumni" class="tab-btn" onclick="switchTab('alumni')">Alumni</button>
-    </div>
-
-    <p id="teams-loading"><i class="fas fa-spinner fa-spin"></i> Loading members from spreadsheet...</p>
-    <p id="teams-error" style="display:none;color:#c0392b;">Failed to load team data.</p>
-
-    <!-- ???? TEAMS TAB ???? -->
-    <div id="panel-teams" style="display:none;">
-      <div id="teams-people-view"></div>
-    </div>
-
-    <!-- ???? ALUMNI TAB (People-widget style) ???? -->
-    <div id="panel-alumni" style="display:none;">
-      <div id="alumni-people-view"></div>
-    </div>
-
-  </div>
-
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
-  <script>const code_highlighting = true;</script>
-  <script>
-    const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-    const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
-    const content_type = {'post':"Posts",'project':"Projects",'publication':"Publications",'talk':"Talks"};
-  </script>
-  <script id="search-hit-fuse-template" type="text/x-template">
-    <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
-        </div>
-      </div>
-    </div>
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-  <script src="/momentum/js/academic.min.a0d331bcd05dbe8b31e244f796710f08.js"></script>
-  <script src="/momentum/js/SheetServices.js"></script>
-
-  <script>
-    /* ???? CONFIG ???? */
-    const TEAM_COL = 'Team';
-
-    const CATEGORY_ORDER = [
-      'Professor',
-      'Investigators','Principal Investigator',
-      'Research Assistants','Researcher',
-      'Student Researchers','Student',
-      'Undergraduate Interns','Intern',
-      'Aider','Alumni','InActive','ETC',
-      'Advisor',
-      'Visitors','Visitor',
-    ];
-
-    /* ???? Known profile photos (only confirmed avatar.png files) ???? */
-    const PHOTO_OVERRIDES = {
-      'people24':  '/momentum/authors/alumni/people24/avatar.png',
-      'seoyoung-ju':   '/momentum/authors/alumni/seoyoung-ju/avatar.png',
-      'people1':   '/momentum/authors/investigators/people1/avatar.png',
-      'people2':  '/momentum/authors/investigators/people2/avatar.png',
-      'people3': '/momentum/authors/research_assistants/people3/avatar.png',
-      'people4':  '/momentum/authors/research_assistants/people4/avatar.png',
-      'people7':  '/momentum/authors/student_researchers/people7/avatar.png',
-      'people5':   '/momentum/authors/student_researchers/people5/avatar.png',
-      'people10':  '/momentum/authors/undergraduate_interns/people10/avatar.png',
-      'junbeom-lee':   '/momentum/authors/undergraduate_interns/junbeom-lee/avatar.png',
-      'people9':     '/momentum/authors/undergraduate_interns/people9/avatar.png',
-      'people11':    '/momentum/authors/undergraduate_interns/people11/avatar.png',
-      'people25': '/momentum/authors/visitors/people25/avatar.png',
-      'people23':     '/momentum/authors/visitors/people23/avatar.jpg',
-      'people18':  '/momentum/authors/advisors/people18/avatar.png',
-      'people19':   '/momentum/authors/advisors/people19/avatar.png',
-      'people17':   '/momentum/authors/advisors/people17/avatar.png',
-      'people20':      '/momentum/authors/advisors/people20/avatar.png',
-      'people21': '/momentum/authors/advisors/people21/avatar.png',
-      'people13': '/momentum/authors/advisors/people13/avatar.png',
-      'people12': '/momentum/authors/advisors/people12/avatar.png',
-    };
-
-    function getPhoto(p, profileUrl) {
-      if (p.PhotoUrl && p.PhotoUrl.trim()) return p.PhotoUrl.trim();
-      if (profileUrl) {
-        const slug = profileUrl.replace(/\/$/, '').split('/').pop();
-        if (PHOTO_OVERRIDES[slug]) return PHOTO_OVERRIDES[slug];
-      }
-      return null;
-    }
-
-    /* mkPortrait: initials circle as base, photo overlaid on top */
-    function mkPortrait(initial, photoSrc, altText) {
-      let labelText = initial;
-      if (altText && altText.startsWith('People ')) {
-        labelText = altText.replace('People ', '');
-      }
-      const base = `position:relative;width:150px;height:150px;border-radius:50%;background:#2962ff;` +
-                   `display:flex;align-items:center;justify-content:center;margin:0 auto;` +
-                   `font-size:55px;font-weight:bold;color:white;overflow:hidden;`;
-      return `<div style="${base}">${labelText}</div>`;
-    }
-
-
-    /* ???? Helpers ???? */
-    // Category ??folder name mapping
-    const CAT_FOLDER = {
-      'Investigators':          'investigators',
-      'Principal Investigator': 'investigators',
-      'Research Assistants':    'research_assistants',
-      'Researcher':             'research_assistants',
-      'Student Researchers':    'student_researchers',
-      'Student':                'student_researchers',
-      'Undergraduate Interns':  'undergraduate_interns',
-      'Intern':                 'undergraduate_interns',
-      'Visitors':               'visitors',
-      'Visitor':                'visitors',
-      'Alumni':                 'alumni',
-      'Advisor':                'advisors',
-    };
-
-    function toSlug(name) {
-      return name.toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .trim()
-        .replace(/\s+/g, '-');
-    }
-
-    function profileUrl(p) {
-      if (p.ProfileUrl && p.ProfileUrl.trim()) return p.ProfileUrl.trim();
-      // Auto-generate from Category + Name_EN_FULL
-      const catFolder = CAT_FOLDER[(p.Category || '').trim()];
-      const name = (p.Name_EN_FULL || '').trim();
-      if (catFolder && name) {
-        return `/momentum/authors/${catFolder}/${toSlug(name)}/`;
-      }
-      return null;
-    }
-
-    function groupBy(people, keyFn, orderHint) {
-      const map = {};
-      people.forEach(p => {
-        const k = keyFn(p) || '(Unknown)';
-        if (!map[k]) map[k] = [];
-        map[k].push(p);
-      });
-      const result = {};
-      (orderHint || []).forEach(k => { if (map[k]) { result[k] = map[k]; delete map[k]; } });
-      Object.keys(map).sort().forEach(k => { result[k] = map[k]; });
-      return result;
-    }
-
-    /* ???? MEMBERS: People-widget style renderer ???? */
-    function renderMembersPeopleStyle(groups, containerId) {
-      const el = document.getElementById(containerId);
-      const keys = Object.keys(groups);
-      if (!keys.length) { el.innerHTML = '<p class="text-muted">No members found.</p>'; return; }
-
-      el.innerHTML = keys.map(label => {
-        const members = groups[label];
-        const personCards = members.map(p => {
-          const url = profileUrl(p);
-          const name = p.Name_EN_FULL || p.Name_KR || 'Unknown';
-          const role = p.Dept_EN || p.Org_EN || p.Category || '';
-
-          const initials = name.charAt(0).toUpperCase();
-          const photoSrc = getPhoto(p, url);
-          const imgEl = mkPortrait(initials, photoSrc, name);
-
-          const inner = `
-            ${url ? `<a href="${url}">${imgEl}</a>` : imgEl}
-            <div class="portrait-title">
-              <h2>${url ? `<a href="${url}">${name}</a>` : name}</h2>
-              <h3>${role}</h3>
-            </div>`;
-
-          return `<div class="col-12 col-sm-auto people-person">${inner}</div>`;
-        }).join('');
-
-        return `
-          <div class="col-md-12" style="margin-top:1.5rem;">
-            <h2 class="mb-4">${label} <span style="font-size:0.85rem;font-weight:400;color:#888;">(${members.length})</span></h2>
+        <!-- ?????썹땟類잙쇊??????????-->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/investigators/people1/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">1</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/investigators/people1/">People 1</a></h2>
+            <h3>Principal Investigator</h3>
           </div>
-          ${personCards}
-          ${/undergraduate.intern/i.test(label) || label === 'Undergraduate Interns' || label === 'Intern' ? `
-          <div class="col-12" style="margin-top:0.5rem;margin-bottom:1rem;">
-            <div style="background:#f0f4ff;border-left:4px solid #2962ff;border-radius:6px;padding:0.75rem 1.1rem;font-size:0.85rem;color:#3a3a5c;">
-              <strong>Undergraduate Research Internship ??Eligibility Criteria</strong><br>
-              3+ months of participation &amp; at least 1 co-authorship
-            </div>
-          </div>` : ''}`;
-      }).join('');
-    }
+        </div>
 
-    /* ???? TEAMS: Thumbnail grid renderer ???? */
-    function renderTeamsGrid(groups, containerId) {
-      const el = document.getElementById(containerId);
-      const keys = Object.keys(groups);
-      if (!keys.length) { el.innerHTML = '<p class="text-muted">No team data found.</p>'; return; }
+        <!-- ?關?쒎첎?????? ???????-->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/investigators/people2/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">2</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/investigators/people2/">People 2</a></h2>
+            <h3>Principal Investigator</h3>
+          </div>
+        </div>
 
-      el.innerHTML = keys.map(label => {
-        const members = groups[label];
-        const cards = members.map(p => {
-          const url = profileUrl(p);
-          const name = p.Name_EN_FULL || p.Name_KR || 'Unknown';
-          const dept = p.Dept_EN || p.Org_EN || '';
-          const imgEl = p.PhotoUrl && p.PhotoUrl.trim()
-            ? `<img src="${p.PhotoUrl}" alt="${name}"
-                onerror="this.outerHTML='<div class=\\'avatar-ph\\'><i class=\\'fas fa-user\\'></i></div>'">`
-            : `<div class="avatar-ph"><i class="fas fa-user"></i></div>`;
-          const inner = `${imgEl}<div class="m-name">${name}</div><div class="m-dept">${dept}</div>`;
-          return url
-            ? `<a class="member-card" href="${url}">${inner}</a>`
-            : `<div class="member-card">${inner}</div>`;
-        }).join('');
-        return `<div class="team-section">
-          <div class="team-section-title">${label}<span class="team-count">(${members.length})</span></div>
-          <div class="members-grid">${cards}</div>
-        </div>`;
-      }).join('');
-    }
+        <!-- ???? Research Assistants ???? -->
+        <div class="col-md-12">
+          <h2 class="mb-4">Research Assistants</h2>
+        </div>
 
-    /* ???? TEAMS: Org chart renderer ???? */
-    function renderTeamsTree(groups, rootId) {
-      const root = document.getElementById(rootId);
-      const teams = Object.keys(groups);
-      if (!teams.length) { root.innerHTML = '<p class="text-muted">No data.</p>'; return; }
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/research_assistants/people3/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">3</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/research_assistants/people3/">People 3</a></h2>
+            <h3>Research Assistant</h3>
+          </div>
+        </div>
 
-      let html = `<div class="org-root-node">
-        <div class="org-root-circle">MOMENTUM<br>Research<br>Group</div>
-        <div class="org-vline org-vline-root"></div>
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/research_assistants/people4/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">4</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/research_assistants/people4/">People 4</a></h2>
+            <h3>Research Assistant</h3>
+          </div>
+        </div>
+
+        <!-- ???? Student Researchers ???? -->
+        <div class="col-md-12">
+          <h2 class="mb-4">Student Researchers</h2>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/student_researchers/people5/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">5</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/student_researchers/people5/">People 5</a></h2>
+            <h3>Student Researcher</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/student_researchers/people6/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">6</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/student_researchers/people6/">People 6</a></h2>
+            <h3>Student Researcher</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/student_researchers/people7/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">7</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/student_researchers/people7/">People 7</a></h2>
+            <h3>Student Researcher</h3>
+          </div>
+        </div>
+
+        <!-- ???? Undergraduate Interns ???? -->
+        <div class="col-md-12">
+          <h2 class="mb-4">Undergraduate Interns</h2>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/undergraduate_interns/people10/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">10</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/undergraduate_interns/people10/">People 10</a></h2>
+            <h3>Undergraduate Intern</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/student_researchers/people8/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">8</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/student_researchers/people8/">People 8</a></h2>
+            <h3>Undergraduate Intern</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="https://eunseob.kr" target="_blank">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">26</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="https://eunseob.kr" target="_blank">People 26</a></h2>
+            <h3>Undergraduate Intern</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/undergraduate_interns/people9/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">9</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/undergraduate_interns/people9/">People 9</a></h2>
+            <h3>Undergraduate Intern</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/undergraduate_interns/people11/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">11</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/undergraduate_interns/people11/">People 11</a></h2>
+            <h3>Undergraduate Intern</h3>
+          </div>
+        </div>
+
+        <!-- ???? Advisors ???? -->
+        <div class="col-md-12">
+          <h2 class="mb-4">Advisors</h2>
+        </div>
+
+        <!-- People 12 (?????쇨덧??? -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people12/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #37474f; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">12</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people12/">People 12</a></h2>
+            <h3>Samsung Changwon Hospital, Radiology</h3>
+          </div>
+        </div>
+
+        <!-- People 13 (??꿔꺂??틝????? -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people13/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #37474f; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">13</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people13/">People 13</a></h2>
+            <h3>Samsung Medical Center, Radiology</h3>
+          </div>
+        </div>
+
+        <!-- People 14 (?????욱룑?? -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people14/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #37474f; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">14</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people14/">People 14</a></h2>
+            <h3>Professor, Radiology</h3>
+          </div>
+        </div>
+
+        <!-- People 15 -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people15/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">15</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people15/">People 15</a></h2>
+            <h3>Radiology Resident / Ph.D. Student</h3>
+          </div>
+        </div>
+
+        <!-- People 16 (NVIDIA) -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people16/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #76b900; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">16</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people16/">People 16</a></h2>
+            <h3>NVIDIA AI Technology</h3>
+          </div>
+        </div>
+
+        <!-- People 17 (NVIDIA, HK) -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people17/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #76b900; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">17</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people17/">People 17</a></h2>
+            <h3>NVIDIA AI Technology</h3>
+          </div>
+        </div>
+
+        <!-- People 18 (NVIDIA) -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people18/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #76b900; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">18</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people18/">People 18</a></h2>
+            <h3>NVIDIA AI Technology</h3>
+          </div>
+        </div>
+
+        <!-- People 19 (NVIDIA, Singapore) -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people19/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #76b900; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">19</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people19/">People 19</a></h2>
+            <h3>NVIDIA AI Technology</h3>
+          </div>
+        </div>
+
+        <!-- Ken (NVIDIA, Taiwan) -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people20/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #76b900; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">20</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people20/">People 20</a></h2>
+            <h3>NVIDIA AI Technology</h3>
+          </div>
+        </div>
+
+        <!-- Ka-Chun (NVIDIA) -->
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/advisors/people21/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #76b900; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">21</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/advisors/people21/">People 21</a></h2>
+            <h3>NVIDIA AI Technology</h3>
+          </div>
+        </div>
+
+        <!-- ???? Visitors ???? -->
+        <div class="col-md-12">
+          <h2 class="mb-4">Visiting Members</h2>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/visitors/people22/">
+            <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">22</div>
+          </a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/visitors/people22/">People 22</a></h2>
+            <h3>Visitor</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/visitors/people23/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">23</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/visitors/people23/">People 23</a></h2>
+            <h3>Visitor</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/alumni/people24/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">24</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/alumni/people24/">People 24</a></h2>
+            <h3>Stanford University</h3>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-auto people-person">
+          <a href="/momentum/authors/visitors/people25/"><div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: #2962ff; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white;">25</div></a>
+          <div class="portrait-title">
+            <h2><a href="/momentum/authors/visitors/people25/">People 25</a></h2>
+            <h3>Cornell University</h3>
+          </div>
+        </div>
+
       </div>
-      <div class="org-cols-wrap" id="${rootId}-cols">`;
 
-      teams.forEach((team, ti) => {
-        const color = TEAM_COLORS[ti % TEAM_COLORS.length];
-        const memberNodes = groups[team].map(p => {
-          const name = p.Name_EN_FULL || p.Name_KR || 'Unknown';
-          const url = profileUrl(p);
-          const click = url ? `onclick="location.href='${url}'"` : '';
-          const imgInner = p.PhotoUrl && p.PhotoUrl.trim()
-            ? `<img src="${p.PhotoUrl}" alt="${name}"
-                onerror="this.outerHTML='<div class=\\'avatar-ph\\'><i class=\\'fas fa-user\\'></i></div>'">`
-            : `<div class="avatar-ph"><i class="fas fa-user"></i></div>`;
-          return `<div class="org-member-wrap">
-            <div class="org-vline org-vline-member"></div>
-            <div class="org-member-bubble" ${click}>
-              ${imgInner}
-              <span class="org-member-tip">${name}</span>
-            </div>
-            <div class="org-member-name">${name}</div>
-            <div class="org-member-role">${p.Category || ''}</div>
-          </div>`;
-        }).join('');
 
-        html += `<div class="org-team-col">
-          <div class="org-vline org-vline-team"></div>
-          <div class="org-team-circle ${color}">${team.replace(/\s/g,'<br>')}</div>
-          <div class="org-vline org-vline-team"></div>
-          <div class="org-members-col">${memberNodes}</div>
-        </div>`;
-      });
-      html += '</div>';
-      root.innerHTML = html;
-
-      requestAnimationFrame(() => {
-        const wrap = document.getElementById(`${rootId}-cols`);
-        if (!wrap) return;
-        const cols = wrap.querySelectorAll('.org-team-col');
-        if (cols.length < 2) return;
-        const wRect = wrap.getBoundingClientRect();
-        const f = cols[0].getBoundingClientRect();
-        const l = cols[cols.length-1].getBoundingClientRect();
-        const bar = document.createElement('div');
-        bar.className = 'org-hline';
-        bar.style.left  = (f.left - wRect.left + f.width/2) + 'px';
-        bar.style.width = (l.left - f.left) + 'px';
-        wrap.style.position = 'relative';
-        wrap.insertBefore(bar, wrap.firstChild);
-      });
-    }
-
-    /* ???? Tab toggle ???? */
-    function switchTab(tab) {
-      document.getElementById('panel-teams' ).style.display = tab === 'teams'  ? 'block' : 'none';
-      document.getElementById('panel-alumni').style.display = tab === 'alumni' ? 'block' : 'none';
-      document.getElementById('tab-teams' ).classList.toggle('active', tab === 'teams');
-      document.getElementById('tab-alumni').classList.toggle('active', tab === 'alumni');
-    }
-
-    /* ???? Teams: People-widget style renderer (sorted by Team_Role) ???? */
-    function renderTeamsPeopleStyle(groups, containerId) {
-      const el = document.getElementById(containerId);
-      const keys = Object.keys(groups);
-      if (!keys.length) {
-        el.innerHTML = '<div class="col-12"><p class="text-muted">No team data found.</p></div>';
-        return;
-      }
-      const roleOrder = { 'Leader': 0, 'SubLeader': 1, 'Member': 2 };
-      el.innerHTML = keys.map(teamId => {
-        const members = [...groups[teamId]].sort((a, b) =>
-          (roleOrder[a._teamRole] ?? 9) - (roleOrder[b._teamRole] ?? 9)
-        );
-        const personCards = members.map(p => {
-          const url  = profileUrl(p);
-          const name = p.Name_EN_FULL || p.Name_KR || 'Unknown';
-          const role = p._teamRole || p.Category || '';
-          const period = p._period || '';
-          const init2 = name.charAt(0).toUpperCase();
-          const photoSrc2 = getPhoto(p, url);
-          const imgEl = mkPortrait(init2, photoSrc2, name);
-          const inner = `${url ? `<a href="${url}">${imgEl}</a>` : imgEl}
-            <div class="portrait-title">
-              <h2>${url ? `<a href="${url}">${name}</a>` : name}</h2>
-              <h3>${role}</h3>
-              ${period ? `<p style="font-size:0.78rem;color:#888;margin:2px 0 0;">${period}</p>` : ''}
-            </div>`;
-          return `<div class="col-12 col-sm-auto people-person">${inner}</div>`;
-        }).join('');
-        return `
-           <div class="col-md-12" style="margin-top:1.5rem;">
-             <h2 class="mb-4">${teamId.replace(/^T_/,'')} <span style="font-size:0.85rem;font-weight:400;color:#888;">(${members.length})</span></h2>
-           </div>
-          ${personCards}`;
-      }).join('');
-    }
-
-    /* ???? Main ???? */
-    async function loadTeams() {
-      try {
-        const [people, personTeamRows] = await Promise.all([
-          getPeople(),
-          fetchSheetData('WEB_PersonTeam')
-        ]);
-        document.getElementById('teams-loading').style.display = 'none';
-        if (!people || !people.length) {
-          document.getElementById('teams-error').style.display = 'block';
-          return;
-        }
-
-        /* Build Person_ID lookup */
-        const sampleP = people[0];
-        const idKey = ['Person_ID','PersonID','ID','id','person_id'].find(k => k in sampleP) || Object.keys(sampleP)[0];
-        const peopleById = {};
-        people.forEach(p => { const pid = (p[idKey]||'').trim(); if (pid) peopleById[pid] = p; });
-
-        /* ALUMNI tab: Filter for Category === 'Alumni' */
-        const alumniOnly = people.filter(p => (p.Category||'').trim() === 'Alumni');
-        const alumniGroups = groupBy(alumniOnly, p => (p.Category||'').trim()||'Alumni', CATEGORY_ORDER);
-        const alumniEl = document.getElementById('alumni-people-view');
-        alumniEl.innerHTML = '<div class="row justify-content-center people-widget" id="alumni-people-row"></div>';
-        renderMembersPeopleStyle(alumniGroups, 'alumni-people-row');
-
-        /* TEAMS tab: join WEB_PersonTeam */
-        const teamGroups = {};
-        if (personTeamRows && personTeamRows.length) {
-          personTeamRows.forEach(row => {
-            const pid    = (row['Person_ID'] || row['PersonID'] || '').trim();
-            const teamId = (row['Team_ID']   || row['TeamID']   || '').trim();
-            const role   = (row['Team_Role'] || '').trim();
-            const period = (row['Active_Period'] || row['Period'] || row['period'] || row['Participation_Period'] || '').trim();
-            if (!teamId) return;
-            const person = peopleById[pid];
-            if (!person || (person.Category || '').trim() === 'Alumni') return;
-            if (!teamGroups[teamId]) teamGroups[teamId] = [];
-            teamGroups[teamId].push({ ...person, _teamRole: role, _period: period });
-          });
-        }
-        const sortedTeamGroups = {};
-        Object.keys(teamGroups).sort().forEach(k => { sortedTeamGroups[k] = teamGroups[k]; });
-
-        const teamsEl = document.getElementById('teams-people-view');
-        teamsEl.innerHTML = '<div class="row justify-content-center people-widget" id="teams-people-row"></div>';
-        renderTeamsPeopleStyle(sortedTeamGroups, 'teams-people-row');
-
-        switchTab('teams');
-        console.log('ID key:', idKey, '| Teams:', Object.keys(sortedTeamGroups).join(', '));
-
-      } catch (err) {
-        console.error('Teams load error:', err);
-        document.getElementById('teams-loading').style.display = 'none';
-        document.getElementById('teams-error').style.display = 'block';
-      }
-    }
-
-    loadTeams();
+    
+    </div>
+  </div>
+  <script>
+    // Statically loaded template members.
   </script>
 
   <div class="container">
     <footer class="site-footer">
-      <div class="d-flex justify-content-center align-items-center flex-wrap mb-5" style="gap: 3rem; margin-top: 2rem;">
-        <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
-          <img src="/momentum/images/logo/capp.png" alt="CAPP Lab Logo" style="max-height: 120px; max-width: 100%; object-fit: contain;">
-        </div>
+      
         <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
           <img src="/momentum/images/logo/snu.jpg" alt="SNU Logo" style="max-height: 120px; max-width: 100%; object-fit: contain;">
         </div>

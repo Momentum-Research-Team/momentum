@@ -645,10 +645,10 @@
             <a class="nav-link " href="/momentum/images/"><span>Images</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="/momentum/#people"><span>People</span></a>
+            <a class="nav-link " href="/momentum/#people"><span>Staff</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="/momentum/alumni/"><span>Teams</span></a>
+            <a class="nav-link " href="/momentum/alumni/"><span>Members</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="/momentum/#contact"><span>Contact</span></a>
@@ -2393,7 +2393,7 @@
       <div class="row justify-content-center people-widget">
 
         <div class="col-md-12 section-heading">
-          <h1>People</h1>
+          <h1>Staff</h1>
         </div>
 
         <!-- ???? Principal Investigators ???? -->
@@ -2741,99 +2741,33 @@
 
             <li>
               <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-              <span id="person-address">Seoul National University, Gwanak-ro 1, Gwanak-gu, Seoul, Republic of
-                Korea</span>
-            </li>
-
-            <li style="margin-top: 0.5rem;">
-              <i class="fa-li fas fa-building fa-2x" aria-hidden="true"></i>
-              <span>
-                <strong>Main Office:</strong> Building 300, SNU &nbsp;|&nbsp;
-                <strong>CAPP Lab 1:</strong> Building 104-1 &nbsp;|&nbsp;
-                <strong>CAPP Lab 2:</strong> Building 301, Room 851-4 &nbsp;|&nbsp;
-                <strong>Nakseongdae:</strong> Bongcheon-ro 560
+              <span id="person-address">
+                서울 종로구 홍지문2길 20 (홍지동)<br>
+                20, Hongjimun 2-gil, Jongno-gu, Seoul, Republic of Korea
               </span>
             </li>
 
             <li style="margin-top: 0.5rem;">
+              <i class="fa-li fas fa-building fa-2x" aria-hidden="true"></i>
+              <span><strong>Office:</strong> 서울 종로구 홍지문2길 20 (20, Hongjimun 2-gil, Jongno-gu, Seoul)</span>
+            </li>
+
+            <li style="margin-top: 0.5rem;">
               <i class="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
-              <span>02-880-1615</span>
+              <span>02-1234-5678</span>
             </li>
 
           </ul>
 
-          <!-- Map tabs -->
+          <!-- Map -->
           <div style="margin-top: 1.2rem;">
-            <!-- Tab buttons -->
-            <div style="display:flex; gap:0.4rem; margin-bottom:0.6rem; flex-wrap:wrap;">
-              <button onclick="showMap('map-snu300')" id="btn-snu300"
-                style="padding:0.4rem 0.9rem;border:2px solid #2962ff;border-radius:6px;background:#2962ff;color:#fff;font-weight:600;cursor:pointer;font-size:0.82rem;">
-                SNU 300
-              </button>
-              <button onclick="showMap('map-nakseong')" id="btn-nakseong"
-                style="padding:0.4rem 0.9rem;border:2px solid #2962ff;border-radius:6px;background:transparent;color:#2962ff;font-weight:600;cursor:pointer;font-size:0.82rem;">
-                Nakseongdae
-              </button>
-              <button onclick="showMap('map-capp1')" id="btn-capp1"
-                style="padding:0.4rem 0.9rem;border:2px solid #2962ff;border-radius:6px;background:transparent;color:#2962ff;font-weight:600;cursor:pointer;font-size:0.82rem;">
-                CAPP Lab 1
-              </button>
-              <button onclick="showMap('map-capp2')" id="btn-capp2"
-                style="padding:0.4rem 0.9rem;border:2px solid #2962ff;border-radius:6px;background:transparent;color:#2962ff;font-weight:600;cursor:pointer;font-size:0.82rem;">
-                CAPP Lab 2
-              </button>
-            </div>
-
-            <!-- Map iframes -->
-            <div id="map-snu300" style="display:block;">
-              <iframe src="https://maps.google.com/maps?q=37.45885,126.94981&z=17&output=embed" width="100%"
+            <div id="map-main">
+              <iframe src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8+%EC%A2%85%EB%A1%9C%EA%B5%AC+%ED%99%8D%EC%A7%80%EB%AC%B82%EA%B8%B8+20&z=17&output=embed" width="100%"
                 height="300" frameborder="0" style="border-radius:8px;border:0;" allowfullscreen loading="lazy">
               </iframe>
-              <p style="font-size:0.8rem;color:#666;margin-top:4px;">SNU Building 300 - Gwanak-ro 1, Gwanak-gu, Seoul
-              </p>
-            </div>
-
-            <div id="map-nakseong" style="display:none;">
-              <iframe src="https://maps.google.com/maps?q=Bongcheon-ro+560,+Gwanak-gu,+Seoul&z=17&output=embed"
-                width="100%" height="300" frameborder="0" style="border-radius:8px;border:0;" allowfullscreen
-                loading="lazy">
-              </iframe>
-              <p style="font-size:0.8rem;color:#666;margin-top:4px;">Bongcheon-ro 560, Gwanak-gu, Seoul (near
-                Nakseongdae Station)</p>
-            </div>
-
-            <div id="map-capp1" style="display:none;">
-              <iframe src="https://maps.google.com/maps?q=Seoul+National+University+Building+104&z=17&output=embed"
-                width="100%" height="300" frameborder="0" style="border-radius:8px;border:0;" allowfullscreen
-                loading="lazy">
-              </iframe>
-              <p style="font-size:0.8rem;color:#666;margin-top:4px;">CAPP Lab 1 - SNU Building 104-1</p>
-            </div>
-
-            <div id="map-capp2" style="display:none;">
-              <iframe src="https://maps.google.com/maps?q=Seoul+National+University+Building+301&z=17&output=embed"
-                width="100%" height="300" frameborder="0" style="border-radius:8px;border:0;" allowfullscreen
-                loading="lazy">
-              </iframe>
-              <p style="font-size:0.8rem;color:#666;margin-top:4px;">CAPP Lab 2 - SNU Building 301, Room 851-4</p>
+              <p style="font-size:0.8rem;color:#666;margin-top:4px;">서울 종로구 홍지문2길 20 (20, Hongjimun 2-gil, Jongno-gu, Seoul)</p>
             </div>
           </div>
-
-          <script>
-            var mapIds = ['map-snu300', 'map-nakseong', 'map-capp1', 'map-capp2'];
-            var btnIds = ['btn-snu300', 'btn-nakseong', 'btn-capp1', 'btn-capp2'];
-            function showMap(id) {
-              mapIds.forEach(function (m) { document.getElementById(m).style.display = 'none'; });
-              btnIds.forEach(function (b) {
-                document.getElementById(b).style.background = 'transparent';
-                document.getElementById(b).style.color = '#2962ff';
-              });
-              document.getElementById(id).style.display = 'block';
-              var btnId = 'btn-' + id.replace('map-', '');
-              document.getElementById(btnId).style.background = '#2962ff';
-              document.getElementById(btnId).style.color = '#fff';
-            }
-          </script>
 
 
 
@@ -3570,11 +3504,7 @@
   </script>
 
   <footer class="site-footer">
-    <div class="d-flex justify-content-center align-items-center flex-wrap mb-5" style="gap: 3rem; margin-top: 2rem;">
-      <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
-        <img src="/momentum/images/logo/capp.png" alt="CAPP Lab Logo"
-          style="max-height: 120px; max-width: 100%; object-fit: contain;">
-      </div>
+    
       <div class="d-flex align-items-center justify-content-center" style="width: 260px; height: 120px;">
         <img src="/momentum/images/logo/snu.jpg" alt="SNU Logo"
           style="max-height: 120px; max-width: 100%; object-fit: contain;">
