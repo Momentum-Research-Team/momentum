@@ -457,44 +457,55 @@
       
       let html = '';
       
+      // Gather all members from categories into a single unified list
       const categories = ['회장', '팀장', '기획팀', '연구팀', '디자인팀', '운영팀'];
+      let allMembers = [];
       
       categories.forEach(cat => {
         const names = genData[cat];
-        if (!names || names.length === 0) return;
+        if (names) {
+          names.forEach(name => {
+            allMembers.push({ name: name, category: cat });
+          });
+        }
+      });
+      
+      // Single header for the generation
+      html += `
+        <div class="col-md-12" style="margin-top: 1rem; margin-bottom: 2.5rem; text-align: center;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; color: #22385f; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.8rem; display: inline-block; min-width: 250px;">
+            ${gen}기 학회원 <span style="font-size: 1.1rem; font-weight: 400; color: #888;">(총 ${allMembers.length}명)</span>
+          </h2>
+        </div>
+      `;
+      
+      // Grid container for circular avatars
+      html += `<div class="d-flex flex-wrap justify-content-center" style="gap: 2rem; width: 100%;">`;
+      
+      allMembers.forEach(member => {
+        const name = member.name;
+        const initial = name.charAt(0);
+        const bg = '#2962ff'; // Premium uniform color
+        const roleName = `${gen}기 학회원`;
         
-        // Output section heading
         html += `
-          <div class="col-md-12" style="margin-top: 2rem;">
-            <h2 class="mb-4" style="font-size: 1.6rem; font-weight: 700; border-left: 4px solid #2962ff; padding-left: 0.7rem;">
-              ${cat} <span style="font-size: 0.9rem; font-weight: 400; color: #888;">(${names.length})</span>
-            </h2>
+          <div class="people-person text-center" style="width: 140px; margin-bottom: 1.5rem;">
+            <div class="portrait" style="width: 110px; height: 110px; border-radius: 50%; background-color: ${bg}; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: bold; color: white; margin: 0 auto 0.6rem; box-shadow: 0 4px 10px rgba(0,0,0,0.06); transition: transform 0.25s ease;">
+              ${initial}
+            </div>
+            <div class="portrait-title">
+              <h2 style="font-size: 1.05rem; font-weight: 700; color: #22385f; margin: 0 0 0.1rem;">${name}</h2>
+              <h3 style="font-size: 0.8rem; font-weight: 400; color: #718096; margin: 0;">${roleName}</h3>
+            </div>
           </div>
         `;
-        
-        // Output members row
-        const bg = colors[cat] || '#2962ff';
-        const roleName = cat === '회장' ? '회장' : cat === '팀장' ? '팀장' : `${cat}원`;
-        
-        names.forEach(name => {
-          const initial = name.charAt(0);
-          html += `
-            <div class="col-12 col-sm-auto people-person text-center">
-              <div class="portrait" style="width: 150px; height: 150px; border-radius: 50%; background-color: ${bg}; display: flex; align-items: center; justify-content: center; font-size: 55px; font-weight: bold; color: white; margin: 0 auto 0.6rem; box-shadow: 0 4px 10px rgba(0,0,0,0.06); transition: transform 0.25s ease;">
-                ${initial}
-              </div>
-              <div class="portrait-title">
-                <h2 style="font-size: 1.1rem; font-weight: 700; color: #22385f; margin: 0 0 0.2rem;">${name}</h2>
-                <h3 style="font-size: 0.85rem; font-weight: 400; color: #666; margin: 0;">${roleName}</h3>
-              </div>
-            </div>
-          `;
-        });
       });
+      
+      html += `</div>`;
       
       container.innerHTML = html;
       
-      // Add hover effect animations to the circular initials
+      // Add hover effects
       const portraits = container.querySelectorAll('.portrait');
       portraits.forEach(p => {
         p.addEventListener('mouseenter', () => p.style.transform = 'scale(1.05) rotate(3deg)');
